@@ -103,6 +103,69 @@ type html>
       .links { display:none; }
       .hero { padding-top:44px; }
     }
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.65);
+}
+
+.modal-inhalt {
+  background-color: white;
+  color: #111;
+  margin: 60px auto;
+  padding: 25px;
+  border-radius: 18px;
+  width: 90%;
+  max-width: 520px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+.modal-schliessen {
+  position: absolute;
+  right: 18px;
+  top: 10px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.modal-inhalt h2 {
+  margin-top: 0;
+}
+
+.modal-inhalt label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.modal-inhalt input,
+.modal-inhalt textarea {
+  width: 100%;
+  padding: 11px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: inherit;
+}
+
+.modal-inhalt button {
+  margin-top: 18px;
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #111;
+  color: white;
+}
   </style>
 </head>
 <body>
