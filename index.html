@@ -54,7 +54,7 @@ type html>
     .btn {
       display:inline-flex; align-items:center; justify-content:center; gap:9px;
       min-height:48px; padding:13px 19px; border-radius:14px;
-      text-decoration:none; font-weight:800; border:1px solid transparent;
+      text-decoration:none; font-weight:800; border:1px solid sparent;
     }
     .btn.primary { background: linear-gradient(135deg, var(--blue), #00b6ff); color:white; box-shadow: 0 14px 34px rgba(0,142,230,.28); }
     .btn.secondary { border-color: var(--line); background:rgba(255,255,255,.07); color:white; }
@@ -113,7 +113,7 @@ type html>
         <a href="#vermietung">Vermietung</a>
         <a href="#technik">Technikservice</a>
         <a href="#preise">Preise</a>
-        <a href="#kontakt">Anfragen</a>
+        <<a href="#" onclick="kontaktFensterOeffnen(); return false;">Anfragen</a>
       </nav>
     </div>
   </header>
@@ -126,7 +126,7 @@ type html>
           <h1>Powerstation mieten & <span>Technikprobleme</span> einfach lösen lassen.</h1>
           <p class="lead">Mobile Stromversorgung für Camping, Garten, Festival, Auto oder Notfälle. Dazu Hilfe bei Handy, WLAN, Smart-TV, Fire TV, PC und Laptop.</p>
           <div class="actions">
-            <a class="btn primary" href="#kontakt">Jetzt Anfrage senden</a>
+            <a class="btn primary" href="#" onclick="kontaktFensterOeffnen(); return false;">Jetzt Anfrage senden</a>
             <a class="btn secondary" href="#preise">Preise ansehen</a>
           </div>
         </div>
@@ -241,5 +241,49 @@ type html>
       <span><a href="#kontakt">Impressum</a><a href="#kontakt">Datenschutz</a></span>
     </div>
   </footer>
+ <div id="kontaktModal" class="modal">
+  <div class="modal-inhalt">
+    <span class="modal-schliessen" onclick="kontaktFensterSchliessen()">&times;</span>
+
+    <h2>Anfrage senden</h2>
+    <p>Füllen Sie das Formular aus. Ich melde mich schnellstmöglich zurück.</p>
+
+    <form action="https://formspree.io/f/DEINE_FORM_ID" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="Name" required>
+
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" name="E-Mail" required>
+
+      <label for="telefon">Telefonnummer</label>
+      <input type="tel" id="telefon" name="Telefon">
+
+      <label for="zeitraum">Gewünschter Mietzeitraum</label>
+      <input type="text" id="zeitraum" name="Mietzeitraum" placeholder="z. B. 01.07. bis 03.07.">
+
+      <label for="nachricht">Nachricht</label>
+      <textarea id="nachricht" name="Nachricht" rows="5" required></textarea>
+
+      <button type="submit">Anfrage abschicken</button>
+    </form>
+  </div>
+</div>
+
+<script>
+function kontaktFensterOeffnen() {
+  document.getElementById("kontaktModal").style.display = "block";
+}
+
+function kontaktFensterSchliessen() {
+  document.getElementById("kontaktModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById("kontaktModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
+</script>         
 </body>
 </html>
