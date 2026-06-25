@@ -322,24 +322,31 @@
     <h2>Anfrage senden</h2>
     <p>Füllen Sie das Formular aus. Ich melde mich schnellstmöglich zurück.</p>
 
-    <form action="https://formspree.io/f/mnjknbwo" method="POST">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="Name" required>
+   <form action="https://formspree.io/f/mnjknbwo" method="POST">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="Name" required>
 
-      <label for="email">E-Mail</label>
-      <input type="email" id="email" name="E-Mail" required>
+  <label for="email">E-Mail</label>
+  <input type="email" id="email" name="E-Mail" required>
 
-      <label for="telefon">Telefonnummer</label>
-      <input type="tel" id="telefon" name="Telefon">
+  <label for="telefon">Telefonnummer</label>
+  <input type="tel" id="telefon" name="Telefon">
 
-      <label for="zeitraum">Gewünschter Mietzeitraum</label>
-      <input type="text" id="zeitraum" name="Mietzeitraum" placeholder="z. B. 01.07. bis 03.07.">
+  <label for="geraet">Gerät auswählen</label>
+  <select id="geraet" name="Gerät" required>
+    <option value="">Bitte Gerät auswählen</option>
+    <option value="EcoFlow RIVER 2 Max Powerstation">EcoFlow RIVER 2 Max Powerstation</option>
+    <option value="Würth SEG 10 Compact Sprühextraktionsgerät">Würth SEG 10 Compact Sprühextraktionsgerät</option>
+  </select>
 
-      <label for="nachricht">Nachricht</label>
-      <textarea id="nachricht" name="Nachricht" rows="5" required></textarea>
+  <label for="zeitraum">Gewünschter Mietzeitraum</label>
+  <input type="text" id="zeitraum" name="Mietzeitraum" placeholder="z. B. 01.07. bis 03.07.">
 
-      <button type="submit">Anfrage abschicken</button>
-    </form>
+  <label for="nachricht">Nachricht</label>
+  <textarea id="nachricht" name="Nachricht" rows="5" required></textarea>
+
+  <button type="submit">Anfrage absenden</button>
+</form>
   </div>
 </div>
 
